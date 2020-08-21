@@ -4,63 +4,72 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class BookList extends AppCompatActivity {
-    ConstraintLayout constraintLayout;
+import java.util.ArrayList;
+import java.util.List;
 
-    TextView booknametextView;
-    TextView authornametextView;
-    TextView booktypetextview;
-    Button addbookbutton;
+public class BookList extends AppCompatActivity {
+
+    LinearLayout booklist;
+    LinearLayout singlebook;
+    Button  addbutton;
     Button  homebutton;
 
+    TextView booknameview,authornameview,booktypeview;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.booklist);
 
 
-        Book book1 = new Book("The diary of a young girl", "Anna Frank", "Lend");
-        Book book2 = new Book("Deyal", "Humayun Ahmed", "Lend");
+        List<Book> list=new ArrayList<>();
+        list.add(new Book("The diary of a young girl", "Anna Frank", "Lend"));
+        list.add(new Book("Deyal", "Humayun Ahmed", "Lend"));
+        list.add(new Book("Harry Potter", "J. K. Rowling", "Sell"));
 
 
-        booknametextView=(TextView)findViewById(R.id.tv_bookname1);
-        authornametextView=(TextView)findViewById(R.id.tv_authorname1);
-        booktypetextview=(TextView)findViewById(R.id.tv_booktype1);
 
-        booknametextView.setText(book1.getBookname());
-        authornametextView.setText(book1.getAuthorname());
-        booktypetextview.setText(book1.getBooktype());
+        booklist=findViewById(R.id.ll_booklist);
 
-        booknametextView=(TextView)findViewById(R.id.tv_bookname2);
-        authornametextView=(TextView)findViewById(R.id.tv_authorname2);
-        booktypetextview=(TextView)findViewById(R.id.tv_booktype2);
+        for(int i=0;i<list.size();i++) {
 
-        booknametextView.setText(book2.getBookname());
-        authornametextView.setText(book2.getAuthorname());
-        booktypetextview.setText(book2.getBooktype());
+            singlebook=(LinearLayout)getLayoutInflater().inflate(R.layout.single_book,booklist,false);
+            singlebook.setShowDividers(LinearLayout.SHOW_DIVIDER_END);
+            singlebook.setDividerDrawable(getDrawable(R.drawable.divider));
+            TextView bookname=(TextView)singlebook.findViewById(R.id.tv_bookname);
+            TextView authorname=(TextView)singlebook.findViewById(R.id.tv_authorname);
+            TextView booktype=(TextView)singlebook.findViewById(R.id.tv_booktype);
+            bookname.setText(list.get(i).getBookname());
+            authorname.setText("By "+list.get(i).getAuthorname());
+            booktype.setText(list.get(i).getBooktype());
+            booklist.addView(singlebook);
 
-        addbookbutton=findViewById(R.id.btn_addbook);
-        homebutton=findViewById(R.id.btn_home);
 
-        addbookbutton.setOnClickListener(new View.OnClickListener() {
+        }
+
+        addbutton=(Button)findViewById(R.id.btn_addbook);
+        addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //   Intent intent=new Intent(getApplicationContext(),AddBook.class);
-                //  int
+
             }
         });
 
+        homebutton=(Button)findViewById(R.id.btn_home);
         homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
+
             }
         });
+
+
+
     }
 }
