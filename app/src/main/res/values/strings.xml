@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Git Practice</string>
+    <string name="welcome_text">Welcome to Our Book Store</string>
+    <string name="str_add_book">Add Book</string>
+    <string name="str_see_all_book">See All Book</string>
 </resources>
