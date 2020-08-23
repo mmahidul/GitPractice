@@ -1,0 +1,25 @@
+java Class/method name:
+class name: Word1Word2Word3
+method name: word1Word2Word3
+
+Java variable name:
+String type = s_VariableName
+double type = d_variableName
+int type = i_variableName
+
+filed type variable:
+TextView = tv_name
+Button = btn_name
+EditText = et_name
+ImageView = iv_name
+
+xml Id name:
+TextView = xml_tv_name
+Button = xml_btn_name
+
+Resource file name:
+String.xml type = str_name
+colors.xml type = clr_name
+styles.xml type = stl_name
+drawable type = drbl_name
+Animation Type = anim_name
