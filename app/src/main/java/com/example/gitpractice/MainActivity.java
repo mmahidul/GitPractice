@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*btn_add_book.setOnClickListener(new View.OnClickListener() {
+        btn_add_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent_btn_add_book = new Intent(MainActivity.this,);
+                Intent intent_btn_add_book = new Intent(MainActivity.this,AddBook.class);
                 startActivity(intent_btn_add_book);
             }
-        });*/
+        });
     }
 }
