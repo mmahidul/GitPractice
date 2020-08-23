@@ -58,7 +58,8 @@ public class BookList extends AppCompatActivity {
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                   Intent intent=new Intent(getApplicationContext(),AddBook.class);
+                   startActivity(intent);
             }
         });
 
@@ -66,7 +67,8 @@ public class BookList extends AppCompatActivity {
         homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(getApplicationContext(),AddBook.class);
+                startActivity(intent);
             }
         });
 
