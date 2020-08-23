@@ -67,7 +67,7 @@ public class BookList extends AppCompatActivity {
         homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),AddBook.class);
+                Intent intent=new Intent(getApplicationContext(),BookList.class);
                 startActivity(intent);
             }
         });
