@@ -19,8 +19,8 @@ public class AddBook extends AppCompatActivity {
         btn_allbooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(AddBook.this,BookList.class);
-//                startActivity(i);
+                Intent i = new Intent(AddBook.this,BookList.class);
+                startActivity(i);
             }
         });
 
@@ -29,8 +29,8 @@ public class AddBook extends AppCompatActivity {
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(AddBook.this,Home.class);
-//                startActivity(i);
+                Intent i = new Intent(AddBook.this,MainActivity.class);
+                startActivity(i);
             }
         });
     }
